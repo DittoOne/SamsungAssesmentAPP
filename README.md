@@ -191,14 +191,14 @@ The application requires the following permissions:
 
 The codebase adheres to the following best practices:
 
-- ✅ **Clean Architecture** - Separation of UI, business logic, and data layers
-- ✅ **MVVM Pattern** - Proper separation of concerns
-- ✅ **Compose Best Practices** - State management, remember, LaunchedEffect
-- ✅ **Lifecycle Awareness** - Proper resource cleanup in ViewModels
-- ✅ **Error Handling** - Try-catch blocks for media and sensor operations
-- ✅ **Material Design 3** - Modern, consistent UI/UX
-- ✅ **Kotlin Conventions** - Idiomatic Kotlin code with coroutines
-- ✅ **Responsive Design** - Adapts to different screen sizes
+-  **Clean Architecture** - Separation of UI, business logic, and data layers
+-  **MVVM Pattern** - Proper separation of concerns
+-  **Compose Best Practices** - State management, remember, LaunchedEffect
+-  **Lifecycle Awareness** - Proper resource cleanup in ViewModels
+-  **Error Handling** - Try-catch blocks for media and sensor operations
+-  **Material Design 3** - Modern, consistent UI/UX
+-  **Kotlin Conventions** - Idiomatic Kotlin code with coroutines
+-  **Responsive Design** - Adapts to different screen sizes
 
  Temperature/Humidity sensors are rare on modern smartphones
 
