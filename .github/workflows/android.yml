@@ -33,7 +33,6 @@ jobs:
         name: samsung-assessment-app
         path: InternAssessmentApp/app/build/outputs/apk/debug/samsung-Assessment-debug.apk
     
-    # Create GitHub Release when you push a tag
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
