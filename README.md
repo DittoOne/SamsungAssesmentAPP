@@ -1,12 +1,21 @@
-# Intern Assessment App - Samsung Developer Tech Support
-[![apk link]] (https://drive.google.com/drive/folders/1TI9BhZdgS0S_hVSj3kL4nwWXe5y60MDh?usp=sharing)
+# Samsung Assessment App 
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-purple.svg)](https://kotlinlang.org/)
 [![Android](https://img.shields.io/badge/Android-24%2B-green.svg)](https://developer.android.com/)
 [![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Latest-blue.svg)](https://developer.android.com/jetpack/compose)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+> **Quick Links:** [📥 Download APK](https://drive.google.com/drive/folders/1TI9BhZdgS0S_hVSj3kL4nwWXe5y60MDh?usp=sharing) | [📄 Blog Article](BLOG_ARTICLE.md) | [📚 Documentation](#-features)
+
 A comprehensive Android application developed as part of the Samsung Developer Tech Support Internship Assessment (January 2026). This project showcases three distinct Android applications integrated into a single cohesive app with a modern Material Design 3 interface.
+
+## 📥 Download APK
+
+Want to try the app? Download the latest APK here:
+
+[![Download APK](https://img.shields.io/badge/Download-APK-blue.svg?style=for-the-badge&logo=android)](https://drive.google.com/drive/folders/1TI9BhZdgS0S_hVSj3kL4nwWXe5y60MDh?usp=sharing)
+
+**Note:** You may need to enable "Install from Unknown Sources" in your Android settings to install the APK.
 
 ## 📱 Features
 
@@ -112,7 +121,7 @@ com.example.internassessmentapp/
 
 1. **Clone the repository:**
 ```bash
-git clone [https://github.com/DittoOne/SamsungAssesmentAPP.git](https://github.com/DittoOne/SamsungAssesmentAPP.git)
+git clone https://github.com/DittoOne/SamsungAssesmentAPP.git
 cd intern-assessment-app
 ```
 
@@ -182,35 +191,24 @@ The application requires the following permissions:
 
 The codebase adheres to the following best practices:
 
--  **Clean Architecture** - Separation of UI, business logic, and data layers
--  **MVVM Pattern** - Proper separation of concerns
--  **Compose Best Practices** - State management, remember, LaunchedEffect
--  **Lifecycle Awareness** - Proper resource cleanup in ViewModels
--  **Error Handling** - Try-catch blocks for media and sensor operations
--  **Material Design 3** - Modern, consistent UI/UX
--  **Kotlin Conventions** - Idiomatic Kotlin code with coroutines
--  **Responsive Design** - Adapts to different screen sizes
+- ✅ **Clean Architecture** - Separation of UI, business logic, and data layers
+- ✅ **MVVM Pattern** - Proper separation of concerns
+- ✅ **Compose Best Practices** - State management, remember, LaunchedEffect
+- ✅ **Lifecycle Awareness** - Proper resource cleanup in ViewModels
+- ✅ **Error Handling** - Try-catch blocks for media and sensor operations
+- ✅ **Material Design 3** - Modern, consistent UI/UX
+- ✅ **Kotlin Conventions** - Idiomatic Kotlin code with coroutines
+- ✅ **Responsive Design** - Adapts to different screen sizes
+
+ Temperature/Humidity sensors are rare on modern smartphones
 
 
-## 🔮 Future Enhancements
 
-- [ ] Add unit tests for ViewModels
-- [ ] Implement data persistence (Room Database)
-- [ ] Add background music playback service
-- [ ] Support for playlists and favorites
-- [ ] Export calculation history to file
-- [ ] Add more calculator functions (factorial, combinations, etc.)
-- [ ] Sensor data logging and export
-- [ ] Dark/Light theme toggle
-- [ ] Multi-language support
 
-## 📄 Blog Article
-
-For a detailed technical walkthrough of the Sensor Dashboard implementation, please refer to the [blog article](BLOG_ARTICLE.md) included in this repository.
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Md Shahriar Rahman Bhuiyan**
 - Assessment for: Samsung Developer Tech Support Internship
 - Date: January 2026
 
