@@ -3,7 +3,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-purple.svg)](https://kotlinlang.org/)
 [![Android](https://img.shields.io/badge/Android-24%2B-green.svg)](https://developer.android.com/)
 [![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Latest-blue.svg)](https://developer.android.com/jetpack/compose)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 > **Quick Links:** [📥 Download APK](https://drive.google.com/drive/folders/1TI9BhZdgS0S_hVSj3kL4nwWXe5y60MDh?usp=sharing) | [📄 Blog Article](BlogArticle.md) | [📚 Documentation](#-features)
 
