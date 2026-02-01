@@ -212,11 +212,7 @@ The codebase adheres to the following best practices:
 - Assessment for: Samsung Developer Tech Support Internship
 - Date: January 2026
 
-## 📜 License
 
-This project is created for assessment purposes as part of the Samsung Developer Tech Support Internship application process.
-
----
 
 ## 🙏 Acknowledgments
 
@@ -225,6 +221,4 @@ This project is created for assessment purposes as part of the Samsung Developer
 - Material Design 3 guidelines
 - Jetpack Compose community
 
----
 
-**Note:** This application was developed as part of an internship assessment and demonstrates proficiency in Android development, Kotlin programming, Jetpack Compose, and proper software architecture patterns.
