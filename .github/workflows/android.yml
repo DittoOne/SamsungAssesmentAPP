@@ -3,8 +3,8 @@ name: Android CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -22,14 +22,23 @@ jobs:
     
     - name: Make gradlew executable
       run: chmod +x InternAssessmentApp/gradlew
-      working-directory: ./
       
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
       working-directory: ./InternAssessmentApp
       
-    - name: Upload APK
+    - name: Upload APK to Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: samsung-Assesment
-        path: InternAssessmentApp/app/build/outputs/apk/debug/samsung-Assesment-debug.apk
+        name: samsung-assessment-app
+        path: InternAssessmentApp/app/build/outputs/apk/debug/samsung-Assessment-debug.apk
+    
+    # Create GitHub Release when you push a tag
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: InternAssessmentApp/app/build/outputs/apk/debug/samsung-Assessment-debug.apk
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
