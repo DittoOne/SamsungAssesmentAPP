@@ -5,7 +5,7 @@
 [![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Latest-blue.svg)](https://developer.android.com/jetpack/compose)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Quick Links:** [📥 Download APK](https://drive.google.com/drive/folders/1TI9BhZdgS0S_hVSj3kL4nwWXe5y60MDh?usp=sharing) | [📄 Blog Article](BLOG_ARTICLE.md) | [📚 Documentation](#-features)
+> **Quick Links:** [📥 Download APK](https://drive.google.com/drive/folders/1TI9BhZdgS0S_hVSj3kL4nwWXe5y60MDh?usp=sharing) | [📄 Blog Article](BlogArticle.md) | [📚 Documentation](#-features)
 
 A comprehensive Android application developed as part of the Samsung Developer Tech Support Internship Assessment (January 2026). This project showcases three distinct Android applications integrated into a single cohesive app with a modern Material Design 3 interface.
 
