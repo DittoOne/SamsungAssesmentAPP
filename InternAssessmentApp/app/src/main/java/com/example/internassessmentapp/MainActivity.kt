@@ -1,9 +1,13 @@
 package com.example.internassessmentapp
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
@@ -23,14 +27,31 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
 import com.example.internassessmentapp.ui.theme.InternAssessmentAppTheme
 import com.example.internassessmentapp.ui.calculator.CalculatorScreen
 import com.example.internassessmentapp.ui.music.MusicPlayerScreen
 import com.example.internassessmentapp.ui.sensor.SensorScreen
 
 class MainActivity : ComponentActivity() {
+
+    private var hasAudioPermission by mutableStateOf(false)
+
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        hasAudioPermission = isGranted
+        if (!isGranted) {
+            // Show a message that permission is needed
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Check and request permission
+        checkAndRequestPermission()
+
         enableEdgeToEdge()
         setContent {
             InternAssessmentAppTheme {
@@ -44,7 +65,14 @@ class MainActivity : ComponentActivity() {
                     when (currentScreen) {
                         "menu" -> MainMenu(
                             onNavigateToCalc = { currentScreen = "calculator" },
-                            onNavigateToMusic = { currentScreen = "music" },
+                            onNavigateToMusic = {
+                                // Request permission before opening music player
+                                if (hasAudioPermission) {
+                                    currentScreen = "music"
+                                } else {
+                                    checkAndRequestPermission()
+                                }
+                            },
                             onNavigateToSensor = { currentScreen = "sensor" }
                         )
                         "calculator" -> CalculatorScreen(onBack = { currentScreen = "menu" })
@@ -52,6 +80,32 @@ class MainActivity : ComponentActivity() {
                         "sensor" -> SensorScreen(onBack = { currentScreen = "menu" })
                     }
                 }
+            }
+        }
+    }
+
+    private fun checkAndRequestPermission() {
+        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            Manifest.permission.READ_MEDIA_AUDIO
+        } else {
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        }
+
+        when {
+            ContextCompat.checkSelfPermission(
+                this,
+                permission
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                hasAudioPermission = true
+            }
+            shouldShowRequestPermissionRationale(permission) -> {
+                // Show explanation to user
+                hasAudioPermission = false
+                requestPermissionLauncher.launch(permission)
+            }
+            else -> {
+                // Request permission
+                requestPermissionLauncher.launch(permission)
             }
         }
     }
@@ -97,14 +151,14 @@ fun MainMenu(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Intern Assessment",
+                    text = "User",
                     style = MaterialTheme.typography.headlineLarge,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Choose a task to get started",
+                    text = "Choose an app to get started",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
